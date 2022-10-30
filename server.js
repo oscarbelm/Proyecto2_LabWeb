@@ -1,24 +1,20 @@
 const express = require('express');
-// const dotenv = require('dotenv');
-// const morgan = require('morgan');
+const dotenv = require('dotenv');
+const morgan = require('morgan');
 // const bodyparser = require("body-parser");
 // const path = require('path');
-
 // const connectDB = require('./server/database/connection');
 
 const app = express();
+dotenv.config( { path : 'config.env'} )
+const PORT = process.env.PORT || 8080
 
 app.get('/',(req, res) =>{
     res.send("Crud Application");
 })
 
-app.listen(3000, ()=>{console.log(`Server is running on http://localhost:${3000}`)});
-
-// dotenv.config( { path : 'config.env'} )
-// const PORT = process.env.PORT || 8080
-
 // // log requests
-// app.use(morgan('tiny'));
+app.use(morgan('tiny'));
 
 // // mongodb connection
 // connectDB();
@@ -38,4 +34,4 @@ app.listen(3000, ()=>{console.log(`Server is running on http://localhost:${3000}
 // // load routers
 // app.use('/', require('./server/routes/router'))
 
-// app.listen(PORT, ()=> { console.log(`Server is running on http://localhost:${PORT}`)});
+app.listen(PORT, ()=> { console.log(`Server is running on http://localhost:${PORT}`)});
