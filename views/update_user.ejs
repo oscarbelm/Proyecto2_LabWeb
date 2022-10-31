@@ -11,30 +11,24 @@
                 </div>
             </div>
             <div class="form-title text-center">
-                <h2 class="text-dark">Actualizar registro</h2>
-                <span class="text-light">Usa el formulario para actualizar registro</span>
+                <h2 class="text-dark">Escanear QR</h2>
+                <span class="text-light">Escanea el codigo QR de las personas</span>
             </div>
 
             <!-- add user form-->
             <!-- form handling -->
-            <form method="POST" id="update_user">
-                <div class="new_user">
-                    <div class="form-group">
-                        <label for="name" class="text-light">Nombre</label>
-                        <input type="hidden" name="id" value="">
-                        
-                        <input type="text" name="name" value="" placeholder="Tu nombre">
-                    </div>
-                    <div class="form-group">
-                        <label for="Email" class="text-light">Email</label>
-                        <input type="text" name="email" value="" placeholder="ejemplo@gmail.com">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn text-dark update">Guardar</button>
-                    </div>
-                </div>
-                
-            </form>
+<!-- include the library -->
+<script src="https://unpkg.com/html5-qrcode@2.0.9/dist/html5-qrcode.min.js"></script>
+<div id="qr-reader" style="width: 600px"></div>
+
+<script>
+    function onScanSuccess(decodedText, decodedResult) {
+    console.log(`Code scanned = ${decodedText}`, decodedResult);
+}
+var html5QrcodeScanner = new Html5QrcodeScanner(
+	"qr-reader", { fps: 10, qrbox: 250 });
+html5QrcodeScanner.render(onScanSuccess);
+</script>
 
         </div>
     </main>
