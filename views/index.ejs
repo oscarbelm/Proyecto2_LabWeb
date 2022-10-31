@@ -5,19 +5,33 @@
     <main id="site-main">
         <div class="container">
             <div class="box-nav d-flex-justify-between">
+                <table><tr>
+                    <th>
                 <a href="/add-user" class="border-shadow">
-                    <span class="text-gradient">New User<i class="fa-solid fa-user"></i></span>
+                    <span class="text-gradient"><i class="fa-solid fa-user"> Nuevo registro </i></span>
                 </a>
+            </th>
             </div>
+            <br>
+            <br>
+            <div class="box-nav d-flex-justify-between">
+                <th>
+                <a href="/update-user" class="border-shadow">
+                    <span class="text-gradient"> <i class="fa-solid fa-camera"> Escanear QR</i></span>
+                </a>
+            </th>
+            </div>
+        </tr>
+        </table>
             <!-- form handling -->
             <form action="/" method="POST">
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
                             <th>ID</th>
-                            <th>Name</th>
+                            <th>Nombre</th>
                             <th>@Email</th>
-                            <th>Action</th>
+                            <th>Borrar</th>
                         </tr>
                     </thead>
                     <tbody>

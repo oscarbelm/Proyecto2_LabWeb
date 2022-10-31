@@ -25,22 +25,22 @@ $("#add_user").submit(function(event){
 
 // })
 
-// if(window.location.pathname == "/"){
-//     $ondelete = $(".table tbody td a.delete");
-//     $ondelete.click(function(){
-//         var id = $(this).attr("data-id")
+if(window.location.pathname == "/"){
+    $ondelete = $(".table tbody td a.delete");
+    $ondelete.click(function(){
+        var id = $(this).attr("data-id")
 
-//         var request = {
-//             "url" : `http://localhost:3000/api/users/${id}`,
-//             "method" : "DELETE"
-//         }
+        var request = {
+            "url" : `http://localhost:3000/api/users/${id}`,
+            "method" : "DELETE"
+        }
 
-//         if(confirm("Do you really want to delete this record?")){
-//             $.ajax(request).done(function(response){
-//                 alert("Data Deleted Successfully!");
-//                 location.reload();
-//             })
-//         }
+        if(confirm("¿Quieres borrar este registro?")){
+            $.ajax(request).done(function(response){
+                alert("Registro borrado");
+                location.reload();
+            })
+        }
 
-//     })
-// }
+    })
+}
