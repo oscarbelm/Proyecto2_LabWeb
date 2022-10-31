@@ -9,7 +9,8 @@ var schema = new mongoose.Schema({
          type: String,
          required: true,
          unique: true
-     }
+     },
+     qrstatus: String,
 })
 
 const Userdb = mongoose.model('userdb', schema);
